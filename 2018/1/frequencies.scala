@@ -1,7 +1,7 @@
 def frequency(changes: List[Int]) = changes.sum
 
 def firstStateRepeated(changes: List[Int]): Unit = {
-  var statesSeen = List[Int]()
+  var statesSeen = Set[Int]()
 
   var current = 0
 
@@ -13,7 +13,7 @@ def firstStateRepeated(changes: List[Int]): Unit = {
         println(current)
         throw new Exception()
       }
-      statesSeen = current :: statesSeen
+      statesSeen = statesSeen + current
       })
   }
 }
