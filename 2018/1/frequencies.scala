@@ -14,7 +14,6 @@ def firstStateRepeated(changes: List[Int]): Unit = {
         throw new Exception()
       }
       statesSeen = current :: statesSeen
-    })
-
+      })
   }
 }
