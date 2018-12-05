@@ -17,9 +17,7 @@ def react(polymer: String): String = {
       pol = pol.substring(0, i) + pol.substring(i + 2)
       i = 0
     }
-    else {
-      i = i + 1
-    }
+    else i = i + 1
   }
-  return pol
+  pol
 }
