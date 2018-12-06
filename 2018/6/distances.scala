@@ -10,4 +10,3 @@ for (line <- Source.fromFile("input").getLines) {
 }
 
 println(manhattanDistance(coordinates(0),coordinates(1))
-
