@@ -12,19 +12,7 @@ layer.count(_ == '1') * layer.count(_ == '2')
 val allLayers = lines(0).grouped(w * h).toList
 
 val message = allLayers(0).zipWithIndex.map(it => {
-  var theColorAtPos = ' '
-  var numLayers = allLayers.length - 1
-  while (numLayers >= 0) {
-    val currLayer = allLayers(numLayers)
-    val currColor = currLayer(it._2)
-    if (currColor == '0') {
-      theColorAtPos = '0'
-    }
-    if (currColor == '1') {
-      theColorAtPos = '1'
-    }
-    numLayers = numLayers - 1
-  }
+  val theColorAtPos = allLayers.map(l => l(it._2)).foldRight(' ')((a, b) => if (a == '2') b else a)
   theColorAtPos
 }).grouped(w)
 
