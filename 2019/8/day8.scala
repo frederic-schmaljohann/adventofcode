@@ -14,8 +14,7 @@ val allLayers = lines(0).grouped(w * h).toList
 
 //part 2
 allLayers(0).zipWithIndex.map(it => {
-  val theColorAtPos = allLayers.map(l => l(it._2)).foldRight(' ')((a, b) => if (a == '2') b else a)
-  theColorAtPos
+  allLayers.map(l => l(it._2)).foldRight(' ')((a, b) => if (a == '2') b else a)
 }).grouped(w).foreach(line => {
     println(line.map(it => if (it == '0') "    " else "XXXX").mkString(" "))
 })
